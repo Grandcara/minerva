@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<eleicoes>
+
+    <candidato>
+        <id>1</id>
+        <nome>Gabriel</nome>
+        <partido>PSOL</partido>
+        <numero>1231</numero>
+        <foto>fotoA.pnd</foto>
+    </candidato>
+
+    <candidato>
+        <id>2</id>
+        <nome>PAULO</nome>
+        <partido>PSEU</partido>
+        <numero>534534</numero>
+        <foto>fotoA.pnd</foto>
+    </candidato>
+
+    <candidato>
+        <id>1</id>
+        <nome>BRUNO</nome>
+        <partido>PSUL</partido>
+        <numero>575675</numero>
+        <foto>fotoA.pnd</foto>
+    </candidato>
+
+    <candidato>
+        <id>3</id>
+        <nome>Rodrigo</nome>
+        <partido>PNOSSO</partido>
+        <numero>312312</numero>
+        <foto>fotoA.pnd</foto>
+    </candidato>
+</eleicoes>
