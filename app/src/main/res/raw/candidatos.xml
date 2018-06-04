@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <eleicoes>
-
+    <candidato>
+        <id>0</id>
+        <nome>Branco</nome>
+        <partido>0</partido>
+        <numero>0</numero>
+        <foto>branco.pnd</foto>
+    </candidato>
+    <candidato>
+        <id>-1</id>
+        <nome>Nulo</nome>
+        <partido>-1</partido>
+        <numero>-1</numero>
+        <foto>nulo.pnd</foto>
+    </candidato>
     <candidato>
         <id>1</id>
         <nome>Gabriel</nome>
@@ -14,22 +27,6 @@
         <nome>PAULO</nome>
         <partido>PSEU</partido>
         <numero>534534</numero>
-        <foto>fotoA.pnd</foto>
-    </candidato>
-
-    <candidato>
-        <id>1</id>
-        <nome>BRUNO</nome>
-        <partido>PSUL</partido>
-        <numero>575675</numero>
-        <foto>fotoA.pnd</foto>
-    </candidato>
-
-    <candidato>
-        <id>3</id>
-        <nome>Rodrigo</nome>
-        <partido>PNOSSO</partido>
-        <numero>312312</numero>
         <foto>fotoA.pnd</foto>
     </candidato>
 </eleicoes>

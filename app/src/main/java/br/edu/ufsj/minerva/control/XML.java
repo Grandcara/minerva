@@ -10,6 +10,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xmlpull.v1.XmlSerializer;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -110,22 +111,56 @@ public class XML {
     }
 
     public void finalizeWriteVoto() {
+        if( new Candidado().getCandidatos().size() > 0) {
+            try {
+                serializer.endTag("", "votos");
+                serializer.endDocument();
+                serializer.flush();
+                fos.close();
 
-        try {
-            serializer.endTag("","votos");
-            serializer.endDocument();
-            serializer.flush();
-            fos.close();
+                //Apaga os canddidatos da memoria ao finalizar
+                new Candidado().getCandidatos().clear();
+                Log.i("Arquivo de votos finalizado", "Sucesso");
+            } catch (Exception e) {
+                throw new RuntimeException(e);
 
-            //Apaga os canddidatos da memoria ao finalizar
-            new Candidado().getCandidatos().clear();
-            Log.i("Arquivo de votos finalizado","Sucesso");
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+            }
         }
     }
 
-    public void readVoto(Context context) {
+    public ArrayList<Candidado>  readVotos(Context context) {
+        String Filename = "votos.xml";
+        ArrayList<Candidado> candidatos = new ArrayList<Candidado>();
+        try {
+            //FileInputStream is = new FileInputStream(Filename);
+            FileInputStream is = context.openFileInput(Filename);
 
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(is);
+
+            Element element=doc.getDocumentElement();
+            element.normalize();
+
+            NodeList nList = doc.getElementsByTagName("voto");
+
+            for (int i=0; i<nList.getLength(); i++) {
+
+                Node node = nList.item(i);
+                if (node.getNodeType() == Node.ELEMENT_NODE) {
+                    Element element2 = (Element) node;
+                    for (Candidado canditado :  new Candidado().getCandidatos()) {
+                        if(canditado.getNumero() == Integer.valueOf(getValue("idCandidato", element2)) ){
+                            candidatos.add(canditado);
+                        }
+                    }
+                    Log.i("Leitura de votos cadidatos",candidatos.toString());
+                }
+            }
+
+        } catch (Exception e) {e.printStackTrace();
+            Log.i("ERRO na Leitura de votos cadidatos, eleição nao terminada",candidatos.toString());
+        }
+        return candidatos;
     }
 }
