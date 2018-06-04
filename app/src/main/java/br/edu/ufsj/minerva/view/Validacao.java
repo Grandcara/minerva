@@ -1,6 +1,8 @@
 package br.edu.ufsj.minerva.view;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -45,13 +47,60 @@ public class Validacao extends Activity {
                             etPassword.setText("");
                             //Intent intent = new Intent(getApplication(), InicializarMidia.class);
                             //startActivityForResult(intent,55);
-                            new InicializarMidia(getApplicationContext());
+                            if(new Candidado().getCandidatos().size() > 0) {
+
+                                new AlertDialog.Builder(Validacao.this)
+                                        .setTitle("Falha!")
+                                        .setMessage("Votação ja foi Inicializada.")
+                                        .setCancelable(false)
+                                        .setPositiveButton("Encerrar", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                finish();
+                                            }
+                                        }).show();
+                            }else{
+                                new InicializarMidia(getApplicationContext());
+                                new AlertDialog.Builder(Validacao.this)
+                                        .setTitle("Sucesso!")
+                                        .setMessage("Votação Inicializada com sucesso.")
+                                        .setCancelable(false)
+                                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                finish();
+                                            }
+                                        }).show();
+                            }
                         }
                         if(pressButton == 4564){
                             etPassword.setText("");
                             //Intent intent = new Intent(getApplication(), Validacao.class);
                             //startActivityForResult(intent,55);
-                            new EncerramentoEleicoes();
+                            if(new Candidado().getCandidatos().size() > 0) {
+                                new EncerramentoEleicoes();
+                                new AlertDialog.Builder(Validacao.this)
+                                        .setTitle("Sucesso!")
+                                        .setMessage("Votação encerradas com sucesso.")
+                                        .setCancelable(false)
+                                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                finish();
+                                            }
+                                        }).show();
+                            }else{
+                                new AlertDialog.Builder(Validacao.this)
+                                        .setTitle("Falha!")
+                                        .setMessage("Votação não foi inicializada.")
+                                        .setCancelable(false)
+                                        .setPositiveButton("Encerrar", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                finish();
+                                            }
+                                        }).show();
+                            }
                         }
                         if(pressButton == 5123432){
                             etPassword.setText("");
@@ -60,15 +109,43 @@ public class Validacao extends Activity {
                                 startActivityForResult(intent, 55);
                                 Log.i("Iniciar Eleição","Sucesso");
                             }else {
-                                finish();
-                                Log.i("Iniciar Eleição", "Falhou, Midias não encontradas!");
+                                new AlertDialog.Builder(Validacao.this)
+                                        .setTitle("Falha!")
+                                        .setMessage("Votação não iniciada.")
+                                        .setCancelable(false)
+                                        .setPositiveButton("Encerrar", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                finish();
+                                            }
+                                        }).show();
+                                Log.i("Iniciar Eleição", "Falhou, Midias não inicializadas!");
                             }
                         }
                     }else{
-                        finish();
+                        new AlertDialog.Builder(Validacao.this)
+                                .setTitle("Falha!")
+                                .setMessage("Para acesso, contate um adiministrador.")
+                                .setCancelable(false)
+                                .setPositiveButton("Encerrar", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        finish();
+                                    }
+                                }).show();
+
                     }
                 }else{
-                    finish();
+                    new AlertDialog.Builder(Validacao.this)
+                            .setTitle("Falha!")
+                            .setMessage("Para acesso, contate um adiministrador.")
+                            .setCancelable(false)
+                            .setPositiveButton("Encerrar", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    finish();
+                                }
+                            }).show();
                 }
 
             }
