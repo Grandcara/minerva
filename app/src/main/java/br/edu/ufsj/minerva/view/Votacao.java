@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import br.edu.ufsj.minerva.MainActivity;
 import br.edu.ufsj.minerva.R;
 import br.edu.ufsj.minerva.control.XML;
 import br.edu.ufsj.minerva.model.Candidado;
@@ -85,6 +87,16 @@ public class Votacao extends Activity {
                 setResult(RESULT_OK, intent);
                 Log.i("Voto candidato confirmado:"," OK");
                 new XML().saveWriteVoto(idCandidato);
+                MediaPlayer mp = MediaPlayer.create(Votacao.this, R.raw.encerramentovoto);
+                mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        mp.release();
+                    }
+
+                });
+                mp.start();
                 //tela de finalização e musiquinha
                 new AlertDialog.Builder(Votacao.this)
                         .setTitle("Sucesso!")
