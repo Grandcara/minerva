@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/mainvotacao">
 
     <EditText
         android:id="@+id/ed_pwchefe"
@@ -28,6 +29,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:padding="16dp"
         android:text="Insira a chave de liberação da Urna para acesso:"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
         android:textSize="36sp"

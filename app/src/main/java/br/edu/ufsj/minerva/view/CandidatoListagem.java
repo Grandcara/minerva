@@ -118,10 +118,10 @@ public class CandidatoListagem extends Activity{
         final int idRandom3 = candidatos.get(2).getIdRandom();
         final int idRandom4 = candidatos.get(3).getIdRandom();
 
-        ivFotoCandidato1.setImageResource(R.drawable.avatar);
-        ivFotoCandidato2.setImageResource(R.drawable.avatar);
-        ivFotoCandidato3.setImageResource(R.drawable.avatar);
-        ivFotoCandidato4.setImageResource(R.drawable.avatar);
+        ivFotoCandidato1.setImageResource(R.drawable.avatar1);
+        ivFotoCandidato2.setImageResource(R.drawable.avatar2);
+        ivFotoCandidato3.setImageResource(R.drawable.avatar3);
+        ivFotoCandidato4.setImageResource(R.drawable.avatar4);
 
 
         tvNomeCandidatoNOME1.setText(candidatos.get(0).getNome());

@@ -14,7 +14,7 @@
         android:id="@+id/iv_candidato"
         android:layout_width="220dp"
         android:layout_height="140dp"
-        android:layout_marginLeft="5dp"
+        android:layout_margin="8dp"
         android:layout_weight="1"
         android:src="@android:drawable/ic_menu_report_image" />
 

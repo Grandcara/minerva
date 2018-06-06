@@ -75,7 +75,7 @@ public class Votacao extends Activity {
                 candidatoFinal = canditado;
             }
         }
-        ivFotoCandidato.setImageResource(R.drawable.avatar);
+        ivFotoCandidato.setImageResource(R.drawable.avatar1);
         tvNomeCandidatoNOME.setText(candidatoFinal.getNome());
         tvNomeCandidatoPARTIDO.setText(candidatoFinal.getPartido());
         tvNomeCandidatoNUMERO.setText(String.valueOf(candidatoFinal.getNumero()));

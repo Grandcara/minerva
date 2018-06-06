@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/mainvotacao"
     tools:context="br.edu.ufsj.minerva.MainActivity"
     >
 
@@ -12,13 +12,12 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
         android:orientation="vertical"
+        android:paddingLeft="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.7"
-        tools:layout_editor_absoluteX="394dp">
+        app:layout_constraintVertical_bias="0.466"
+        tools:layout_editor_absoluteX="11dp">
 
         <LinearLayout
             android:id="@+id/linearLayout2"
@@ -35,33 +34,71 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0">
 
-            <Button
-                android:id="@+id/bt_liberacao"
-                android:layout_width="175dp"
-                android:layout_height="100dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
                 android:layout_weight="1"
-                android:text="Liberação da Urna"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-                tools:layout_editor_absoluteX="59dp"
-                tools:layout_editor_absoluteY="68dp" />
+                android:background="@drawable/bg_blue"
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/bt_totalvt"
-                android:layout_width="175dp"
-                android:layout_height="100dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="12dp"
+                    android:src="@drawable/liberarvotacao" />
+
+                <Button
+                    android:id="@+id/bt_liberacao"
+                    android:layout_width="175dp"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+
+                    android:text="Liberação da Urna"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                    tools:layout_editor_absoluteX="59dp"
+                    tools:layout_editor_absoluteY="68dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
                 android:layout_weight="1"
-                android:text="Totalizar Votos"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-                tools:layout_editor_absoluteX="291dp"
-                tools:layout_editor_absoluteY="59dp" />
+                android:background="@drawable/bg_blue"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="12dp"
+                    android:src="@drawable/listagemvotos" />
+
+                <Button
+                    android:id="@+id/bt_totalvt"
+                    android:layout_width="175dp"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+
+                    android:text="Totalizar Votos"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                    tools:layout_editor_absoluteX="291dp"
+                    tools:layout_editor_absoluteY="59dp" />
+            </LinearLayout>
 
 
         </LinearLayout>
@@ -82,33 +119,62 @@
             app:layout_constraintVertical_bias="0.687">
 
 
-            <Button
-                android:id="@+id/bt_iniciovt"
-                android:layout_width="175dp"
-                android:layout_height="100dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
                 android:layout_weight="1"
-                android:text="Iniciar Votação"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-                tools:layout_editor_absoluteX="59dp"
-                tools:layout_editor_absoluteY="68dp" />
+                android:background="@drawable/bg_blue"
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/bt_encerravt"
-                android:layout_width="175dp"
-                android:layout_height="100dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="12dp"
+                    android:src="@drawable/votacao" />
+
+                <Button
+                    android:id="@+id/bt_iniciovt"
+                    android:layout_width="175dp"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+
+                    android:text="Iniciar Votação"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                    tools:layout_editor_absoluteX="59dp"
+                    tools:layout_editor_absoluteY="68dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
                 android:layout_weight="1"
-                android:text="Encerrar Votação"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-                tools:layout_editor_absoluteX="220dp"
-                tools:layout_editor_absoluteY="33dp" />
+                android:background="@drawable/bg_blue"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_encerravt"
+                    android:layout_width="175dp"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+
+                    android:text="Encerrar Votação"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                    tools:layout_editor_absoluteX="220dp"
+                    tools:layout_editor_absoluteY="33dp" />
+            </LinearLayout>
 
         </LinearLayout>
     </LinearLayout>
