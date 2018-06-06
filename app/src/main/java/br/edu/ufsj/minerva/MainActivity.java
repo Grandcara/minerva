@@ -6,7 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.security.NoSuchAlgorithmException;
+
 import br.edu.ufsj.minerva.control.XML;
+import br.edu.ufsj.minerva.criptografia.RSA;
+import br.edu.ufsj.minerva.model.RSAModel;
 import br.edu.ufsj.minerva.view.Validacao;
 
 /**
@@ -34,6 +38,15 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //inicialização do RSA
+        RSAModel rsa = new RSAModel();
+        rsa.inicializar();
+        try {
+            RSAModel.arquivoCriptografico.GenerateKeys();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
 
         Button btLiberacaoVt = findViewById(R.id.bt_liberacao);
         Button btTotalizarVt = findViewById(R.id.bt_totalvt);
