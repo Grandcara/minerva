@@ -33,6 +33,8 @@ public class Validacao extends Activity {
 
         Button bt_liberarurna = findViewById(R.id.bt_liberarurna);
 
+        Button bt_voltar = findViewById(R.id.bt_voltarurna);
+
         bt_liberarurna.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -150,6 +152,13 @@ public class Validacao extends Activity {
 
             }
         });
+        bt_voltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
 
     }
 

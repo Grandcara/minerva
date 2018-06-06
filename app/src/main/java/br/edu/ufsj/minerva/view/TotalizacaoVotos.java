@@ -36,8 +36,6 @@ public class TotalizacaoVotos extends Activity {
 
         totalDeVotosAnuladosResultado = findViewById(R.id.tv_votosAnuladosResultado);
 
-
-
         Button btVoltar = findViewById(R.id.bt_Voltar);
 
         //fechar tela de senha ao voltar

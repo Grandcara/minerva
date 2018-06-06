@@ -68,8 +68,8 @@ public class XML {
     }
 
 
-    static OutputStream fos;
-    static XmlSerializer serializer = Xml.newSerializer();
+    private static OutputStream fos;
+    private static XmlSerializer serializer = Xml.newSerializer();
     public void inicializeWriteVoto(Context context) {
         String Filename = "votos.xml";
         fos = null;
