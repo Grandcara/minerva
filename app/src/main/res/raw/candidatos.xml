@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <eleicoes>
     <candidato>
-        <id>0</id>
-        <nome>Branco</nome>
-        <partido>0</partido>
-        <numero>0</numero>
-        <foto>branco.pnd</foto>
-    </candidato>
-    <candidato>
-        <id>-1</id>
-        <nome>Nulo</nome>
-        <partido>-1</partido>
-        <numero>-1</numero>
-        <foto>nulo.pnd</foto>
-    </candidato>
-    <candidato>
         <id>1</id>
-        <nome>Gabriela de matos</nome>
-        <partido>PSOL</partido>
-        <numero>1231</numero>
-        <foto>fotoA.pnd</foto>
+        <nome>Java</nome>
+        <partido>POO</partido>
+        <numero>8</numero>
+        <foto>java</foto>
+    </candidato>
+    <candidato>
+        <id>2</id>
+        <nome>Python</nome>
+        <partido>ATOAS</partido>
+        <numero>3</numero>
+        <foto>python</foto>
+    </candidato>
+    <candidato>
+        <id>3</id>
+        <nome>C</nome>
+        <partido>HArdCore</partido>
+        <numero>11</numero>
+        <foto>c</foto>
     </candidato>
 
     <candidato>
-        <id>2</id>
-        <nome>PAULO</nome>
-        <partido>PSEU</partido>
-        <numero>534534</numero>
-        <foto>fotoA.pnd</foto>
+        <id>4</id>
+        <nome>PHP</nome>
+        <partido>Web</partido>
+        <numero>7</numero>
+        <foto>PHP</foto>
     </candidato>
 </eleicoes>

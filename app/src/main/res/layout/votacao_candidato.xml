@@ -65,12 +65,11 @@
 
     <Button
         android:id="@+id/bt_voltarvotar"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:layout_marginBottom="36dp"
-        android:layout_marginEnd="40dp"
-        android:background="@android:color/holo_orange_light"
-        android:text="Voltar"
+        android:layout_marginEnd="60dp"
+        android:background="@drawable/back2"
         android:textAlignment="center"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
         android:textSize="36sp"
@@ -79,12 +78,11 @@
 
     <Button
         android:id="@+id/bt_confirmar"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:layout_marginBottom="36dp"
         android:layout_marginEnd="60dp"
-        android:background="@android:color/holo_green_light"
-        android:text="Confirmar"
+        android:background="@drawable/ok"
         android:textAlignment="center"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
         android:textSize="36sp"

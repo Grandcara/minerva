@@ -5,10 +5,10 @@
     android:id="@+id/linearLayout4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/mainvotacao"
     android:orientation="vertical"
     tools:layout_editor_absoluteX="29dp"
     tools:layout_editor_absoluteY="16dp">
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,8 +17,10 @@
 
         <TextView
             android:id="@+id/tv_totalVotos"
-            android:layout_width="wrap_content"
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="36dp"
             android:layout_weight="1"
             android:text="Total de Votos"
             android:textSize="48sp" />
@@ -27,6 +29,7 @@
             android:id="@+id/tv_totalVotosResultado"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginTop="36dp"
             android:layout_weight="1"
             android:text="00"
             android:textAlignment="textEnd"
@@ -42,10 +45,11 @@
 
         <TextView
             android:id="@+id/tv_votosValidos"
-            android:layout_width="wrap_content"
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
             android:layout_weight="1"
-            android:text="Total de Votos Válidos"
+            android:text="Total de Votos Válidos:"
             android:textSize="24sp" />
 
         <TextView
@@ -65,10 +69,11 @@
 
         <TextView
             android:id="@+id/tv_votosBrancos"
-            android:layout_width="wrap_content"
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
             android:layout_weight="1"
-            android:text="Total de Votos Brancos"
+            android:text="Total de Votos Brancos:"
             android:textSize="24sp" />
 
         <TextView
@@ -88,10 +93,11 @@
 
         <TextView
             android:id="@+id/tv_votosAnulados"
-            android:layout_width="wrap_content"
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
             android:layout_weight="1"
-            android:text="Total de Votos Anulados"
+            android:text="Total de Votos Nulos:"
             android:textSize="24sp" />
 
         <TextView
@@ -105,39 +111,151 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView"
-            android:textAlignment="viewEnd"
-            android:textSize="24sp" />
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/bt_Voltar"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_weight="1"
-        android:text="Voltar"
-        android:textAlignment="textEnd"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-        android:textSize="36sp" />
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bt_Voltar"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="80dp"
+            android:layout_weight="1"
+            android:background="@drawable/back2"
+            android:paddingBottom="8dp"
+            android:textAlignment="center"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="90dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Candidatos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Votos por Candidato:"
+                    android:textSize="36sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_cand1"
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Candidato 1"
+                        android:textAlignment="viewEnd"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_votos_cand1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1"
+                        android:text="TextView"
+                        android:textSize="24sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_cand2"
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Candidato 2"
+                        android:textAlignment="viewEnd"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_votos_cand2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1"
+                        android:text="TextView"
+                        android:textSize="24sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/tv_cand3"
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Candidato 3"
+                        android:textAlignment="viewEnd"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_votos_cand3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1"
+                        android:text="TextView"
+                        android:textSize="24sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_cand4"
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Candidato 4"
+                        android:textAlignment="viewEnd"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_votos_cand4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1"
+                        android:text="TextView"
+                        android:textSize="24sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>

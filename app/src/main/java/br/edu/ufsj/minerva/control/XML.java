@@ -61,6 +61,36 @@ public class XML {
         } catch (Exception e) {e.printStackTrace();}
 
     }
+    public byte[] readkey(Context context) {
+        byte[] publicKey = new byte[32];
+        try {
+            InputStream is = context.getResources().openRawResource(R.raw.key_public_assinatura);
+
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(is);
+
+            Element element=doc.getDocumentElement();
+            element.normalize();
+
+            NodeList nList = doc.getElementsByTagName("publickey");
+
+            for (int i=0; i<nList.getLength(); i++) {
+
+                Node node = nList.item(i);
+                if (node.getNodeType() == Node.ELEMENT_NODE) {
+                    Element element2 = (Element) node;
+
+                    publicKey[Integer.valueOf(getValue("postion", element2))] = Byte.valueOf(getValue("key", element2));
+                    Log.i("carregar: ", String.valueOf(getValue("postion", element2)));
+
+                    Log.i("Chave Carregada: ", publicKey.toString());
+                }
+            }
+
+        } catch (Exception e) {e.printStackTrace();}
+        return publicKey;
+    }
     private static String getValue(String tag, Element element) {
         NodeList nodeList = element.getElementsByTagName(tag).item(0).getChildNodes();
         Node node = nodeList.item(0);
@@ -96,6 +126,12 @@ public class XML {
             if(canditado.getIdRandom() == idCandidato ){
                 candidatoFinal = canditado;
             }
+        }  if(idCandidato == 0){
+            Candidado branco = new Candidado(0,0,"Branco", "", 0,"branco");
+            candidatoFinal = branco;
+        }else if(idCandidato == -1){
+            Candidado nulo = new Candidado(-1,-1,"Nulo", "", -1,"nulo");
+            candidatoFinal = nulo;
         }
         try {
             serializer.startTag("", "voto");
@@ -149,10 +185,18 @@ public class XML {
                 Node node = nList.item(i);
                 if (node.getNodeType() == Node.ELEMENT_NODE) {
                     Element element2 = (Element) node;
-                    for (Candidado canditado :  new Candidado().getCandidatos()) {
-                        if(canditado.getNumero() == Integer.valueOf(getValue("idCandidato", element2)) ){
+                    int numero = Integer.valueOf(getValue("idCandidato", element2));
+                    for (Candidado canditado :  new Candidado().getCandidatos()){
+
+                        if(canditado.getNumero() == numero ){
                             candidatos.add(canditado);
                         }
+                    } if( numero == 0){
+                        Candidado branco = new Candidado(0,0,"Branco", "", 0,"branco");
+                        candidatos.add(branco);
+                    }else if( numero == -1){
+                        Candidado nulo = new Candidado(-1,-1,"Nulo", "", -1,"nulo");
+                        candidatos.add(nulo);
                     }
                     Log.i("Leitura de votos cadidatos",candidatos.toString());
                 }

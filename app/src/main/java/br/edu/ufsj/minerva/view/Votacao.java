@@ -70,10 +70,17 @@ public class Votacao extends Activity {
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         final int idCandidato = bundle.getInt("candidatoNum");
-        for (Candidado canditado :  new Candidado().getCandidatos()) {
-            if(canditado.getIdRandom() == idCandidato ){
+        for (Candidado canditado : new Candidado().getCandidatos()) {
+            if (canditado.getIdRandom() == idCandidato) {
                 candidatoFinal = canditado;
             }
+        }
+        if(idCandidato == 0){
+            Candidado branco = new Candidado(0,0,"Branco", "", 0,"branco");
+            candidatoFinal = branco;
+        }else if(idCandidato == -1){
+            Candidado nulo = new Candidado(-1,-1,"Nulo", "", -1,"nulo");
+            candidatoFinal = nulo;
         }
         ivFotoCandidato.setImageResource(R.drawable.avatar1);
         tvNomeCandidatoNOME.setText(candidatoFinal.getNome());
@@ -85,7 +92,7 @@ public class Votacao extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 setResult(RESULT_OK, intent);
-                Log.i("Voto candidato confirmado:"," OK");
+                Log.i("Voto candidato confirmado:", " OK");
                 new XML().saveWriteVoto(idCandidato);
                 MediaPlayer mp = MediaPlayer.create(Votacao.this, R.raw.encerramentovoto);
                 mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {

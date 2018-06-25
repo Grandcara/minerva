@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,6 +23,9 @@ public class CandidatoListagem extends Activity{
     View includedLayoutCandidato2;
     View includedLayoutCandidato3;
     View includedLayoutCandidato4;
+
+    Button includedLayoutCandidatobranco;
+    Button includedLayoutCandidatonulo;
 
     ImageView ivFotoCandidato1;
     ImageView ivFotoCandidato2;
@@ -53,6 +57,9 @@ public class CandidatoListagem extends Activity{
         includedLayoutCandidato2 = findViewById(R.id.cadidato2);
         includedLayoutCandidato3 = findViewById(R.id.cadidato3);
         includedLayoutCandidato4 = findViewById(R.id.cadidato4);
+
+        includedLayoutCandidatobranco = findViewById(R.id.btn_branco);
+        includedLayoutCandidatonulo  = findViewById(R.id.btn_nulo);
 
         //campo candidatos FOTO
         ivFotoCandidato1 = includedLayoutCandidato1.findViewById(R.id.iv_candidato);
@@ -192,6 +199,34 @@ public class CandidatoListagem extends Activity{
                 bundle.putInt("candidatoNum", idRandom4);
                 intent.putExtras(bundle);
 
+                startActivityForResult(intent,1);
+            }
+        });
+
+        includedLayoutCandidatobranco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                voting = false;
+                Log.i("listagem candidato:","click 1, random number="+new Candidado().getCandidatos().get(0).getIdRandom());
+                Intent intent = new Intent(getApplication(), Votacao.class);
+                Bundle bundle = new Bundle();
+                int btInfo = 1;
+                bundle.putInt("candidatoNum", 0);
+                intent.putExtras(bundle);
+                startActivityForResult(intent,1);
+            }
+        });
+
+        includedLayoutCandidatonulo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                voting = false;
+                Log.i("listagem candidato:","click 1, random number="+new Candidado().getCandidatos().get(0).getIdRandom());
+                Intent intent = new Intent(getApplication(), Votacao.class);
+                Bundle bundle = new Bundle();
+                int btInfo = 1;
+                bundle.putInt("candidatoNum", -1);
+                intent.putExtras(bundle);
                 startActivityForResult(intent,1);
             }
         });

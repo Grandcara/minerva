@@ -3,12 +3,15 @@ package br.edu.ufsj.minerva;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 
 import br.edu.ufsj.minerva.control.XML;
+import br.edu.ufsj.minerva.criptografia.Ed25519;
 import br.edu.ufsj.minerva.criptografia.RSA;
 import br.edu.ufsj.minerva.model.RSAModel;
 import br.edu.ufsj.minerva.view.Validacao;

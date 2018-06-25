@@ -30,7 +30,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:padding="16dp"
-        android:text="Insira a chave de liberação da Urna para acesso:"
+        android:text="Insira a chave de liberação da Urna:"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/ed_pwchefe"
@@ -41,32 +41,35 @@
 
     <Button
         android:id="@+id/bt_voltarurna"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="400dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Voltar"
+        android:background="@drawable/back2"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/bt_liberarurna"
+        app:layout_constraintHorizontal_bias="0.803"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_pwchefe" />
+        app:layout_constraintTop_toBottomOf="@+id/ed_pwchefe"
+        app:layout_constraintVertical_bias="0.425" />
 
     <Button
         android:id="@+id/bt_liberarurna"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="112dp"
+        android:layout_marginEnd="60dp"
         android:layout_marginTop="8dp"
-        android:text="Liberar"
+        android:background="@drawable/ok"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_pwchefe" />
+        app:layout_constraintTop_toBottomOf="@+id/ed_pwchefe"
+        app:layout_constraintVertical_bias="0.446" />
 
 </android.support.constraint.ConstraintLayout>
